@@ -11,12 +11,12 @@ exports.sendMail = (req,res)=>{
         // path: '/usr/sbin/sendmail'
         service:'gmail',
         auth:{
-            user:'jyotiranjankalta81@gmail.com',
-            pass:'Motu@321'
+            user:process.env.EMAIL,
+            pass: process.env.PASSWORD
         }
     });
     transporter.sendMail({
-        from: 'jyotiranjankalta81@gmail.com',
+        from: process.env.EMAIL,
         to: 'jrkbond@gmail.com',
         subject: 'Message',
         text: 'I hope this message gets delivered!'
